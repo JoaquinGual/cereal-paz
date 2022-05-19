@@ -1,5 +1,7 @@
 
 import React , {useState} from 'react'
+import {IoIosAddCircleOutline,IoIosRemoveCircleOutline} from 'react-icons/io'
+
 
 export const Counter = () => {
 
@@ -13,10 +15,11 @@ function Quitar(){
 }
 
   return (
-    <div className='d-flex justify-content-center mt-5'>
-        <button className='btn btn-warning me-1' onClick={Agregar} >+</button>
-        <h1>{count}</h1>
-        <button className='btn btn-warning ms-1' onClick={Quitar}>-</button>
+    <div className='d-flex mt-2'>
+        
+        <button className='btn btn-danger ms-1' onClick={Quitar}><IoIosRemoveCircleOutline/></button>
+        <h5 className='mt-1'>{count}</h5>
+        <button className='btn btn-danger me-1' onClick={Agregar}><IoIosAddCircleOutline/></button>
     </div>
  )
 }
