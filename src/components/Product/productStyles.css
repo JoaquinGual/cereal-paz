@@ -1,4 +1,122 @@
 .border-card{
-    border-radius: 15px;
+    border-radius: 5px 40px 5px 40px;
     box-shadow: 1rem 0rem 1rem rgba(0,0,0,0.2);
 }
+
+.cardBackground{
+    background-color: #f4bfad;
+}
+
+
+
+.priceBackground{
+    background-color: #f9a799;
+    font-size: 1.3rem;
+}
+
+.cardFont{
+    color: #0b5b67;
+}
+
+.cakeImg{
+        border-radius: 15px 15px 10px 10px;
+        
+}
+
+
+
+* {
+  font-family: arial;
+}
+
+.contenedor {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	transition: all 0.3s ease-out;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	display: block;
+}
+
+.contenedor-cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.contenedor-cards .contenedor-card-item {
+
+	width: 25%;
+	margin: 1%;
+	-webkit-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+	border-radius: 5px;
+	cursor: help;
+}
+
+
+
+.contenedor-card-item-wrapper {
+	overflow: hidden;
+	position: relative !important;
+	background: #3E2723;
+	border-radius: 5px;
+}
+
+.contenedor-card-item img {
+	max-width: 100%;
+	position: relative;
+	top: 0;
+	-webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	border-radius: 5px;
+}
+
+.contenedor-card-item .contenedor-info {
+	position: absolute;
+	width: 100%;
+	height: 10rem;
+	bottom: -10rem;
+	-webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+	transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.contenedor-card-item .contenedor-info .fondo {
+	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.73) 53%, rgba(0,0,0,0.88) 100%);
+background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.73) 53%,rgba(0,0,0,0.88) 100%);
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.73) 53%,rgba(0,0,0,0.88) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#e0000000',GradientType=0 );
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.contenedor-card-item .contenedor-info .info {
+	color: #fff;
+	position: relative;
+	z-index: 500;
+	padding: 20px 15px;
+}
+
+.contenedor-card-item .contenedor-info .info .titulo {
+  margin: 0;
+  font-size: 20px;
+}
+
+.contenedor-card-item .contenedor-info .info .categoria {
+	display: block;
+	font-size: 10px;
+}
+
+.contenedor-card-item:hover .contenedor-info {
+	bottom: 0;
+}
+
+
+
+
+

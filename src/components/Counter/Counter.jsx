@@ -1,25 +1,29 @@
 
-import React , {useState} from 'react'
-import {IoIosAddCircleOutline,IoIosRemoveCircleOutline} from 'react-icons/io'
+import React, { useState } from 'react'
+import { IoIosAddCircleOutline, IoIosRemoveCircleOutline } from 'react-icons/io'
 
 
-export const Counter = () => {
+export const Counter = (props) => {
 
-const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0)
 
-function Agregar(){
-  setCount(count + 1)
-}
-function Quitar(){
-  setCount(count - 1)
-}
+  function Agregar() {
+    if (count < props.stock){
+      setCount(count + 1)
+    }
+  }
+  function Quitar() {
+    if (count > 0) {
+      setCount(count - 1)
+    }
+  }
 
   return (
     <div className='d-flex mt-2'>
-        
-        <button className='btn btn-danger ms-1' onClick={Quitar}><IoIosRemoveCircleOutline/></button>
-        <h5 className='mt-1'>{count}</h5>
-        <button className='btn btn-danger me-1' onClick={Agregar}><IoIosAddCircleOutline/></button>
+
+      <button className='btn buttonBackground ms-1' onClick={Quitar}><IoIosRemoveCircleOutline size={30} color="#0b5b67" /></button>
+      <h5 className='mt-2'>{count}</h5>
+      <button className='btn buttonBackground me-1' onClick={Agregar}><IoIosAddCircleOutline size={30} color="#0b5b67" /></button>
     </div>
- )
+  )
 }

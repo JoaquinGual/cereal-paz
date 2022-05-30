@@ -1,0 +1,21 @@
+.imageProduct{
+    width: 50vw;
+    height: 30vw !important;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.TittleBackground{
+    background-color: #f9a799;
+}
+
+.cardRounded{
+    border-radius: 15px 15px 15px 15px;
+}
+
+.buttonCartBackground{
+    background-color: #0b5b67 !important;
+}
+
+.buttonCartBackground:hover{
+    background-color: #0d6f7e !important;
+}
