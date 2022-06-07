@@ -32,9 +32,6 @@ export const Product = (props) => {
             <div className='bottom'>
                 <p className='text-center priceBackground' >${props.precio}</p>
                 <p className='text-center mt-1'>Stock:{props.stock}</p>
-                <div className='d-flex justify-content-center mb-2'>
-                    <Counter stock={props.stock}/>
-                </div>
             </div>
             <div className='d-flex justify-content-center mb-2'>
                 <Link className='btn buttonCartBackground text-white' to={`/detalle/`+ props.id}>Ver Detalle</Link>

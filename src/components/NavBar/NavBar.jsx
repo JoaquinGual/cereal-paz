@@ -14,11 +14,10 @@ export const NavBar = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            
                             <Link className='nav-link navbarFont' to="/">Inicio</Link>
-                            <Nav.Link href="#productos" className='navbarFont'>Productos</Nav.Link>
-                            <Nav.Link href="#promociones" className='navbarFont'>Promociones</Nav.Link>
-                            <Nav.Link href="#Contacto" className='navbarFont'>Contacto</Nav.Link>
+                            <Link className='nav-link navbarFont' to="/productos">Productos</Link>
+                            <Link className='nav-link navbarFont' to="/promociones">Promociones</Link>
+                            <Link className='nav-link navbarFont' to="/contacto">Contacto</Link>
                         </Nav>
                         <CartWidget />
                     </Navbar.Collapse>

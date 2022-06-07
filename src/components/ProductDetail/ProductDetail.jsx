@@ -1,12 +1,21 @@
-import React from 'react'
+import React,{useState} from 'react'
+import { Link } from 'react-router-dom'
 import { Counter } from '../Counter/Counter'
 import './ProductDetail.css'
 
 export const ProductDetail = (props) => {
 
+const [cantidad, setCantidad] = useState(0)
+
     let ingredientes = []
     if (props.ingredientes) {
         ingredientes = props.ingredientes.split(',');
+    }
+
+    const handleOnAdd = (count) => {
+        console.log('agregue al carrito')
+        console.log(count)
+        setCantidad(count)
     }
     
 
@@ -30,11 +39,8 @@ export const ProductDetail = (props) => {
                         <div className='text-center ps-4 pe-4 TittleBackground cardRounded'>
                             <h4 className=''>Stock:{props.stock}</h4>
                         </div>
-                        <div className='d-flex justify-content-center'>
-                            <Counter stock={props.stock}/>
-                        </div>
-                        <div className='d-flex justify-content-center mt-2'>
-                        <button className='btn buttonCartBackground col-3'>Añadir al Carrito</button>
+                        <div className='d-flex justify-content-center '>
+                            {cantidad === 0 ? <Counter stock={props.stock}  onAdd={handleOnAdd}/> : <Link to={"/cart"}>Ir al Carrito</Link>}
                         </div>
                         
                     </div>
