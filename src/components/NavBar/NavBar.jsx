@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container'
 import { CartWidget } from './CartWidget/CartWidget'
 import LogoNala from '../../img/LogoNala.png'
 import { Link } from 'react-router-dom'
+
 export const NavBar = () => {
     return (
         <>
@@ -19,7 +20,8 @@ export const NavBar = () => {
                             <Link className='nav-link navbarFont' to="/promociones">Promociones</Link>
                             <Link className='nav-link navbarFont' to="/contacto">Contacto</Link>
                         </Nav>
-                        <CartWidget />
+                        <Link className='nav-link navbarFont' to="/cart"><CartWidget /></Link>
+                        
                     </Navbar.Collapse>
                     
                 </Container>
