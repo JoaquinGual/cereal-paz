@@ -2,14 +2,16 @@ import React,{useState,useContext} from 'react'
 import { Link } from 'react-router-dom'
 import { Counter } from '../Counter/Counter'
 import './ProductDetail.css'
-import { Context } from '../../App'
+import CartContext from '../../Context/CartContext'
 
 export const ProductDetail = ({id,nombre,img,ingredientes,stock,precio,descripcion}) => {
 
 
 const [cantidad, setCantidad] = useState(0)
 
-const {addToCart} = useContext(Context)
+const {addToCart,CountProductsAdded} = useContext(CartContext)
+
+const initialValue = CountProductsAdded(id);
 
     let ingredientes1 = []
     if (ingredientes) {
@@ -45,7 +47,7 @@ const {addToCart} = useContext(Context)
                             <h4 className=''>Precio ${precio}</h4>
                         </div>
                         <div className='d-flex justify-content-center '>
-                            {cantidad === 0 ? <Counter stock={stock}  onAdd={handleOnAdd}/> : <Link to={"/cart"}>Ir al Carrito</Link>}
+                            {cantidad === 0 ? <Counter stock={stock}  onAdd={handleOnAdd} initial={initialValue}/> : <Link to={"/cart"}>Ir al Carrito</Link>}
                         </div>
                         
                     </div>

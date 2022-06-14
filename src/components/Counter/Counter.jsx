@@ -5,7 +5,7 @@ import { IoIosAddCircleOutline, IoIosRemoveCircleOutline } from 'react-icons/io'
 
 export const Counter = ({stock = 0,initial= 1,onAdd}) => {
 
-  const [cantidad, setCantidad] = useState(initial)
+  const [cantidad, setCantidad] = useState(initial === 0 ? 1 : initial)
 
   function Agregar() {
     if (cantidad < stock) {
@@ -26,7 +26,7 @@ export const Counter = ({stock = 0,initial= 1,onAdd}) => {
         <button className='btn buttonBackground me-1' onClick={Agregar}><IoIosAddCircleOutline size={30} color="#0b5b67" /></button>
       </div>
       <div className='d-flex justify-content-center mt-2 mb-4'>
-        <button className='btn buttonCartBackground' onClick={() => onAdd(cantidad)}>Añadir al Carrito</button>
+        <button className='btn buttonCartBackground' onClick={() => onAdd(cantidad)}>{initial > 1 ?  "Modificar Cantidad": "Añadir al Carrito" }</button>
       </div>
     </div>
   )

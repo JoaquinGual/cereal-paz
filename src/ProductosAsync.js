@@ -6,6 +6,7 @@ const products = [
         ingredientes: 'Chocolate, Cacao Amargo, Huevos, Escencia de Vainilla, Harina 0000, Dulce de leche, Merengue', 
         img:'https://i.ytimg.com/vi/ebgCov6FmV8/maxresdefault.jpg', 
         stock: 25, 
+        categoria: 'premium',
         descripcion:'Base de Marquise de Chocolate decorada con una capa de Dulce de leche y Copos de Merengue'
     },
     { 
@@ -15,6 +16,7 @@ const products = [
         ingredientes: 'Galletas Chocolinas, Queso Crema, Dulce de Leche', 
         img:'https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/09/14170007/chocotorta-destacada.jpg', 
         stock: 25, 
+        categoria: 'basico',
         descripcion:'Capas de Galletas Chocolinas con Queso Crema y Dulce de Leche'
     },
     { 
@@ -24,6 +26,7 @@ const products = [
         ingredientes: 'Galletas de Vainilla, Manteca, Queso Mascarpone, Crema de Leche, Escencia de Vainilla, Gelatina sin Sabor y Frutos Rojos', 
         img:'https://recetascheesecake.com/wp-content/uploads/cheesecake-frutos-rojos.jpg', 
         stock: 25, 
+        categoria: 'premium',
         descripcion:'Base de Galletas de Vainilla rellena de Cheese Cream decorada de Mermelada de frutos Rojos'
     },
     { 
@@ -33,6 +36,7 @@ const products = [
         ingredientes: 'Chocolate, Azucar, Harina, Huevos, Licor Kirsch', 
         img:'https://media.mykaramelli.com/galeria/recetas/receta-tarta-selva-negra_129_1.jpg', 
         stock: 25, 
+        categoria:'premium',
         descripcion:'Capas de Galletas Chocolinas con Queso Crema y Dulce de Leche'
     },
     { 
@@ -42,6 +46,7 @@ const products = [
         ingredientes: 'Galletas de Vainilla, Manteca, Queso Mascarpone, Crema de Leche, Escencia de Vainilla, Gelatina sin Sabor y Frutos Rojos', 
         img:'https://elgourmet.s3.amazonaws.com/recetas/cover_ipk5fgqbdh_eg-pf-platos-turron-de-avena-hi-03.jpg', 
         stock: 25, 
+        categoria: 'basico',
         descripcion:'Base de Galletas de Vainilla rellena de Cheese Cream decorada de Mermelada de frutos Rojos'
     },
     { 
@@ -51,6 +56,7 @@ const products = [
         ingredientes: 'Galletas Chocolinas, Queso Crema, Dulce de Leche', 
         img:'https://www.annarecetasfaciles.com/files/lemon-pie-scaled.jpg', 
         stock: 25, 
+        categoria: 'premium',
         descripcion:'Capas de Galletas Chocolinas con Queso Crema y Dulce de Leche'
     },
     { 
@@ -60,6 +66,7 @@ const products = [
         ingredientes: 'Galletas de Vainilla, Manteca, Queso Mascarpone, Crema de Leche, Escencia de Vainilla, Gelatina sin Sabor y Frutos Rojos', 
         img:'https://images.aws.nestle.recipes/original/de34e8d407c1b2a71b8f2016b7ff066f_tiramisu.png', 
         stock: 25, 
+        categoria: 'premium',
         descripcion:'Base de Galletas de Vainilla rellena de Cheese Cream decorada de Mermelada de frutos Rojos'
     },
     
@@ -81,10 +88,10 @@ export const getProductsById = (id) => {
     })
 }
 
-export const getProductsByCategory = (category) => {
+export const getProductsByCategory = (categoria) => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(products.filter(product => product.category === category))
+            resolve(products.filter(product => product.categoria === categoria))
         }, 0)
     })
 }

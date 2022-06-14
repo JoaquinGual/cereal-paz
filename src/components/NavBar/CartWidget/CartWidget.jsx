@@ -1,11 +1,11 @@
 import React,{useContext} from 'react'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
-import {Context} from '../../../App'
+import CartContext from '../../../Context/CartContext'
 
 
 export const CartWidget = () => {
 
-  const {CountProducts} = useContext(Context)
+  const {CountProducts} = useContext(CartContext)
   const cantidad = CountProducts()
 
   return (

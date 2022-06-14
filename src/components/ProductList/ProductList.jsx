@@ -1,21 +1,10 @@
-import React, { useState, useEffect } from 'react'
 
-import { getProducts } from '../../ProductosAsync'
 import { Product } from '../Product/Product'
-export const ProductList = () => {
 
-    const [products, setProducts] = useState([])
+export const ProductList = ({products}) => {
     
-    useEffect(() => {
-        getProducts().then(data => {
-            setProducts(data)
-            
-        })
-    }, [products])
-    
-
     return (
-        <div className='d-flex justify-content-around flex-wrap'>
+        <div className='d-flex justify-content-around flex-wrap w-100'>
             {products.map(product =>
                     <Product {...product} key={product.id} />
             )}
