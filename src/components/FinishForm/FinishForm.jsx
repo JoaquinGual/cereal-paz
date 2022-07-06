@@ -20,13 +20,13 @@ export const FinishForm = ({ CreateOrder }) => {
 
 
     return (
-        <>  <h4 className='mt-4'>Completa el formulario para finalizar la compra...</h4>
+        <>
+            <h4 className='mt-4'>Completa el formulario para finalizar la compra...</h4>
             <Formik initialValues={initialValues} validationSchema={validationSchema}
                 onSubmit={async (values, formikBag) => {
                     try {
                         CreateOrder(values)
                     } catch (error) {
-
                     }
                 }}>
                 <Form className='d-flex justify-content-center mt-2'>

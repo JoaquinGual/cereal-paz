@@ -12,13 +12,9 @@ export const Cart = () => {
 
     const { cart, RemoveProduct, GetTotal, ClearCart } = useContext(CartContext)
 
-
     function enviarMail(email, detalle, nombre, apellido, direccion, idOrden) {
 
         const det = detalle.map((d) => { return "<p> -" + d.cantidad + " " + d.nombre + " | $" + d.precio * d.cantidad + "</p>" })
-
-
-        console.log(det)
         let values = {
             nombreCompleto: nombre + " " + apellido,
             direccion: direccion,
@@ -32,8 +28,6 @@ export const Cart = () => {
     }
 
     const CreateOrder = ({ nombre, apellido, email, direccion }) => {
-
-
         // Detalle de la compra
         const Orden = {
             comprador: {
@@ -74,10 +68,7 @@ export const Cart = () => {
             await updateDoc(itemRef, {
                 stock: increment(-item.cantidad)
             });
-
         });
-
-
     }
 
     return (
@@ -100,7 +91,6 @@ export const Cart = () => {
                                     </thead>
                                     <tbody >
                                         {cart.map(product =>
-
                                             <tr key={product.id} className="navbarFont row align-items-center">
                                                 <td className='col'><button className='btn' onClick={() => { RemoveProduct(product.id) }}><TiDeleteOutline size={30} color="#0b5b67" /></button></td>
                                                 <td className='col'>{product.nombre}</td>
@@ -113,17 +103,13 @@ export const Cart = () => {
                                 </table>
                             </div>
                         </div>
-
                         <button className='btn buttonCartBackground text-white mt-3' onClick={() => { ClearCart() }}>Limpiar Carrito</button>
                         <div>
                             <FinishForm CreateOrder={CreateOrder} />
                         </div>
                     </div>
-
                 }
-
             </div>
-
         </>
     )
 }
