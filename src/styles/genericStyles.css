@@ -31,4 +31,11 @@ font-family: 'Josefin Sans', sans-serif !important;
     
 }
 
+.tableHeight{
+    border-collapse: separate;
+    border-spacing: 3em;
+    
+}
+
+
 

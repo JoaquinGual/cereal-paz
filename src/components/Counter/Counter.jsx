@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { IoIosAddCircleOutline, IoIosRemoveCircleOutline } from 'react-icons/io'
 
 
@@ -7,6 +7,12 @@ export const Counter = ({stock = 0,initial= 1,onAdd}) => {
 
   const [cantidad, setCantidad] = useState(initial === 0 ? 1 : initial)
 
+  useEffect(() => {
+    
+    setCantidad(initial === 0 ? 1 : initial)
+    
+  }, [initial])
+  
   function Agregar() {
     if (cantidad < stock) {
       setCantidad(cantidad + 1)
@@ -17,6 +23,11 @@ export const Counter = ({stock = 0,initial= 1,onAdd}) => {
       setCantidad(cantidad - 1)
     }
   }
+
+  if (stock <= 0) {
+    return <h2 className='mt-3'>Producto no disponible</h2>
+  }
+    
 
   return (
     <div className='d-flex flex-column'>

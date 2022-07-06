@@ -5,6 +5,8 @@ import { ProductListContainer } from "./components/ProductListContainer/ProductL
 import './styles/genericStyles.css'
 import { Cart } from "./components/Cart/Cart";
 import { CartContextProvider } from "./Context/CartContext";
+import { Toaster } from "react-hot-toast";
+
 
 
 function App() {
@@ -26,6 +28,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </CartContextProvider>
+      <Toaster/>
     </div>
   );
 }
